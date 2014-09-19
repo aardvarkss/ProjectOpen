@@ -1,0 +1,169 @@
+﻿@model ProjectOpen.Models.ViewModel.ChangeRequest
+
+@{
+    ViewBag.Title = "Change Request";
+}
+
+@Html.Partial("_HeaderBar",@Model.Header.Hdr)   
+
+<div id="container">
+
+    @Html.Partial("_FixedSideBarNavigation",Model.Header.sbm)
+    
+    <div id="content">
+		<div class="container">
+				
+            @Html.Partial("_BreadCrumbsLine", @Model.Header.brdcrm)
+
+            @Html.Partial("_HeadingLine",@Model.Header.hl)
+        
+            <!-- Change request form -->
+            <div class="row">
+					<!--=== Project details ===-->
+					<div class="col-md-12">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i>Change Request</h4>
+							</div>
+							<div class="widget-content">
+								<form class="form-horizontal row-border" action="ChangeRequestSubmit" method="post">
+
+									<div class="form-group">
+                                        
+										<label class="col-md-2 control-label">Requested By:</label>
+										<div class="col-md-4">
+											<div class="row" style="margin-bottom: 6px;">
+												<div class="col-md-11">
+                                                    <select class="form-control" name="reqBy">
+												        @foreach(Staff s in Model.Requestors){
+                                                            <option value="@s.StaffId" 
+                                                                @if(s.StaffId == Model.selectedRequestor){
+                                                                        @:selected="selected"
+                                                                    }
+                                                                >@s.StaffDisplayName</option>
+                                                        }
+											        </select>
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Request Date:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+                                                    <input type="text" name="reqDate" class="form-control datepicker" value="
+                                                        @if(Model.RequestDate == null) {
+                                                            DateTime.Now.ToString("dd-MM-yyyy");
+                                                        }
+                                                        else
+                                                        {
+                                                            @:Model.RequestDate   
+                                                        }">
+												</div>
+											</div>
+                                        </div>
+                                          
+                                        <label class="col-md-2 control-label">Department:</label>
+										<div class="col-md-4">
+											<div class="row" style="margin-bottom: 6px;">
+												<div class="col-md-11">
+													<select class="form-control" name="department">
+												        @foreach(Grouping g in Model.Departments){
+                                                            <option value="@g.GroupingId" 
+                                                                @if(g.GroupingId == Model.selectedDepartment){
+                                                                        @:selected="selected"
+                                                                    }
+                                                                >@g.GroupingDescription</option>
+                                                        }
+											        </select>
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Cost Centre:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="costCentre" class="form-control">
+                                                        @Model.CostCentre
+                                                    </input>
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Authorised By:</label>
+										<div class="col-md-4">
+											<div class="row" style="margin-bottom: 6px;">
+												<div class="col-md-11">
+                                                    <select class="form-control" name="authBy">
+												        @foreach(Staff s in Model.Authorisers){
+                                                            <option value="@s.StaffId" 
+                                                                @if(s.StaffId == Model.selectedAuthoriser){
+                                                                        @:selected="selected"
+                                                                    }
+                                                                >@s.StaffDisplayName</option>
+                                                        }
+											        </select>
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Authorisation Date:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="authDate" class="form-control datepicker"  value="@DateTime.Now.ToString("dd-MM-yyyy")">
+												</div>
+											</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group">
+										<label class="col-md-2 control-label">Change Title:</label>
+										<div class="col-md-10">
+											<input type="text" name="title" class="form-control" value="@Model.Title" />
+										</div>
+									</div>
+                                    <div class="form-group">
+										<label class="col-md-2 control-label">Description of Change:</label>
+										<div class="col-md-10">
+											<textarea rows="4" cols="5" name="changeDesc" class="limited form-control" data-limit="100"></textarea>
+											<span class="help-block" id="limit-text1"></span>
+										</div>
+									</div>
+                                    <div class="form-group">
+										<label class="col-md-2 control-label">Reason For Change:</label>
+										<div class="col-md-10">
+											<textarea rows="4" cols="5" name="changeReason" class="limited form-control" data-limit="100"></textarea>
+											<span class="help-block" id="limit-text2"></span>
+										</div>
+									</div>
+                                    <div class="form-group">
+										<label class="col-md-2 control-label">Business Benefits:</label>
+										<div class="col-md-10">
+											<textarea rows="3" cols="5" name="businessBenefits" class="limited form-control" data-limit="100"></textarea>
+											<span class="help-block" id="limit-text3"></span>
+										</div>
+									</div>
+                                    <div class="form-group">
+										<label class="col-md-2 control-label">Estimated Cost Savings(£):</label>
+										<div class="col-md-10">
+											<textarea rows="2" cols="5" name="costSavings" class="limited form-control" data-limit="100"></textarea>
+											<span class="help-block" id="limit-text4"></span>
+										</div>
+									</div>
+                                    <div class="form-group">
+                                        <div class="col-md-10">&nbsp;</div>
+                                        <div class="col-md-1">
+										    <button class="btn btn-info" type="submit">Submit Request</button>
+                                        </div>
+									</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+ </div>

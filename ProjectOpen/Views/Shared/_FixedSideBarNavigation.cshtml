@@ -1,0 +1,61 @@
+﻿@model SDD.Models.SideBarMenu
+
+
+    <div id="sidebar" class="sidebar-fixed">
+			<div id="sidebar-content">
+
+				<!-- Search Input -->
+				<form class="sidebar-search">
+					<div class="input-box">
+						<button type="submit" class="submit">
+							<i class="icon-search"></i>
+						</button>
+						<span>
+							<input type="text" placeholder="Search...">
+						</span>
+					</div>
+				</form>
+
+				<!-- Search Results -->
+				<div class="sidebar-search-results">
+
+					<i class="icon-remove close"></i>
+					<!-- Documents -->
+					<div class="title">
+						Documents
+					</div>
+					
+					<!-- /Documents -->
+					<!-- Persons -->
+					<div class="title">
+						Persons
+					</div>
+					<ul class="notifications">
+						<li>
+							<a href="javascript:void(0);">
+								<div class="col-left">
+									<span class="label label-danger"><i class="icon-female"></i></span>
+								</div>
+								<div class="col-right with-margin">
+									<span class="message">Jane <strong>Doe</strong></span>
+									<span class="time">21 years old</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div> <!-- /.sidebar-search-results -->
+
+				<!--=== Navigation ===-->
+				<ul id="nav">
+                    @foreach (SDD.Models.MenuItem s in Model.Items)
+                    {
+                        @Html.Partial("_SideBarMenuItem",s);
+                    }
+				</ul>
+				
+				
+
+			</div>
+			<div id="divider" class="resizeable"></div>
+		</div>
+		<!-- /Sidebar -->

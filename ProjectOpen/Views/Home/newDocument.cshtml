@@ -1,0 +1,73 @@
+﻿@model SDD.Models.ViewModel.HeaderVM
+
+@{
+    ViewBag.Title = "Add Document";
+}
+
+@Html.Partial("_HeaderBar",Model.Hdr)   
+
+<div id="container">
+
+    @Html.Partial("_FixedSideBarNavigation",Model.sbm)
+    
+    <div id="content">
+		<div class="container">
+				
+            @Html.Partial("_BreadCrumbsLine",Model.brdcrm)
+
+            @Html.Partial("_HeadingLine",Model.hl)
+        
+            <!-- Change request form -->
+            <div class="row">
+					<!--=== Project details ===-->
+					<div class="col-md-12">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i>Add Document</h4>
+							</div>
+							<div class="widget-content">
+								<form class="form-horizontal row-border" action="submitDocument" method="post">
+
+										<div class="form-group">
+										    <label class="col-md-2 control-label">Document Upload:</label>
+										    <div class="col-md-10">
+											    <input type="file" data-style="fileinput">
+										    </div>
+									    </div>
+  
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Short Description:</label>
+										    <div class="col-md-10">
+											    <div class="row"  style="margin-bottom: 6px;">  
+												    <div class="col-md-8">
+													    <input type="text" name="costCentre" class="form-control">
+												    </div>
+											    </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="form-group">
+										    <label class="col-md-2 control-label">Long Description (optional):</label>
+										    <div class="col-md-10">
+											    <textarea rows="4" cols="5" name="changeDesc" class="limited form-control" data-limit="100"></textarea>
+											    <span class="help-block" id="limit-text1"></span>
+										    </div>
+									    </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-10">&nbsp;</div>
+                                            <div class="col-md-1">
+										        <button class="btn btn-info" type="submit">Save Document</button>
+                                            </div>
+									    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+ </div>

@@ -1,0 +1,49 @@
+﻿@model ProjectOpen.Models.HeadingLine
+
+<!--=== Page Header ===-->
+				<div class="page-header">
+					<div class="page-title">
+						<h3>@Model.PageTitle</h3>
+						<span>@Model.PageSubtitle</span>
+					</div>
+
+					<!-- Page Stats -->
+					<ul class="page-stats">
+						<li>
+							<div class="summary">
+								<span>@Model.GraphATitle</span>
+								<h3>16 ( +2 )</h3>
+							</div>
+							<div id="sparkline-bar" class="graph sparkline hidden-xs">
+                                @{string results ="";
+                                    foreach(int i in Model.GraphA)
+                                    {
+                                        results += i + ",";
+                                    }
+                                    @results
+                                }
+
+                                </div>
+							<!-- Use instead of sparkline e.g. this:
+							<div class="graph circular-chart" data-percent="73">73%</div>
+							-->
+						</li>
+						<li>
+							<div class="summary">
+								<span>@Model.GraphBTitle</span>
+								<h3>37 ( +7 )</h3>
+							</div>
+							<div id="sparkline-bar2" class="graph sparkline hidden-xs">
+                                @{string results2 ="";
+                                    foreach(int i in Model.GraphB)
+                                    {
+                                        results2 += i + ",";
+                                    }
+                                    @results2
+                                }
+							</div>
+						</li>
+					</ul>
+					<!-- /Page Stats -->
+				</div>
+				<!-- /Page Header -->

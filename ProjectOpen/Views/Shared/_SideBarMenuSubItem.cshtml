@@ -1,0 +1,19 @@
+﻿@model SDD.Models.MenuSubItem
+
+<li>
+    <a href="@Model.Href">
+        <i class="@Model.IconName"></i>
+        <span>&nbsp;&nbsp;</span>@Model.DisplayName
+    </a>
+    @if (@Model.SubItems.Count > 0)
+    {
+        <ul class="sub-menu">
+
+            @foreach (SDD.Models.MenuSubItem m in @Model.SubItems)
+            {
+                @Html.Partial("_SideBarMenuSubItem", m);
+            }
+
+        </ul>
+    }
+</li>

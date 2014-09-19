@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" connectionString="Data Source=AARDVARKSS;Initial Catalog=OpenProject;Integrated Security=True;Pooling=False" name="" defaultIdentityGenerator="IdentityColumn" quoteIdentifiers="false" xmlns="http://namespaces.mindscape.co.nz/nhmodel">
+  <entities>
+    <entity name="Grouping" tableName="Grouping" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="GroupingGroupingTypeId" columnName="Grouping_groupingTypeId" isNullable="true" dataType="Int16" />
+        <entityProperty name="GroupingDescription" size="64" columnName="Grouping_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="64" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="GroupingId" columnName="Grouping_id" dataType="Int16" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="49172e45-1703-4959-9d62-b99490026ff1" collectionName="Projects" keyColumnName="Project_groupingId" backreferenceName="ProjectGrouping" eagerLoadCollection="true">
+          <entityMoniker name="//Project" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="3b3ba77a-51a4-4e03-81ec-929b269b9415" collectionName="RequestForWorks" keyColumnName="RequestForWork_department" backreferenceName="RequestForWorkDepartment">
+          <entityMoniker name="//RequestForWork" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="60a7e2d9-f969-4f33-bfac-7a4f90b44c69" collectionName="Staffs" keyColumnName="Staff_groupingId" backreferenceName="StaffGrouping">
+          <entityMoniker name="//Staff" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="Staff" tableName="Staff" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="StaffForename" size="32" columnName="Staff_forename" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="StaffSurname" size="32" columnName="Staff_surname" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="StaffDisplayName" size="64" columnName="Staff_displayName">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="64" />
+            <notNullValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="StaffUserType" columnName="Staff_userType" isNullable="true" dataType="Int32" />
+        <entityProperty name="StaffEmailAddress" size="64" columnName="Staff_emailAddress" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="64" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="StaffContactNumber" size="16" columnName="Staff_contactNumber" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="16" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="StaffGroupingId" columnName="Staff_groupingId" isNullable="true" dataType="Int16" />
+        <entityProperty name="StaffDefaultAuthoriserId" columnName="Staff_defaultAuthoriserId" isNullable="true" dataType="Int32" />
+        <entityProperty name="StaffDefaultCostCentre" size="8" columnName="Staff_defaultCostCentre" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="8" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="StaffId" columnName="Staff_id" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="9611c7fe-3767-4c4e-8177-6c8ed9a19e37" collectionName="ProjectsByProjectOwner" keyColumnName="Project_ownerId" backreferenceName="ProjectOwner" eagerLoadCollection="true">
+          <entityMoniker name="//Project" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="93b19fea-5ab5-4376-8310-3780b005cd64" collectionName="ProjectsByProjectProjectManager" keyColumnName="Project_projectManager" backreferenceName="ProjectProjectManager">
+          <entityMoniker name="//Project" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="6abe1431-43f0-4e73-af66-8b5b89dcbc5a" collectionName="ProjectTaskNotifications" keyColumnName="ProjectTaskNotification_staffId" backreferenceName="ProjectTaskNotificationStaff">
+          <entityMoniker name="//ProjectTaskNotification" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="e0242b90-b839-4415-bd0f-48307ebdfaa2" collectionName="RequestForWorksByRequestForWorkAuthorisedBy" keyColumnName="RequestForWork_authorisedById" backreferenceName="RequestForWorkAuthorisedBy">
+          <entityMoniker name="//RequestForWork" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="d03e36bc-3251-4808-882b-e646bd0462ce" collectionName="RequestForWorksByRequestForWorkRequestor" keyColumnName="RequestForWork_requestorId" backreferenceName="RequestForWorkRequestor">
+          <entityMoniker name="//RequestForWork" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="936eb978-52c4-4338-93eb-6fd8ae98a72f" collectionName="Staffs" keyColumnName="Staff_defaultAuthoriserId" backreferenceName="StaffDefaultAuthoriser">
+          <entityMoniker name="//Staff" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="dba5129e-311d-42b5-8b5c-eac8df89586f" collectionName="ProjectDocumentsByProjectDocumentUser" keyColumnName="ProjectDocument_userId" backreferenceName="ProjectDocumentUser">
+          <entityMoniker name="//ProjectDocument" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="ecd8d6d8-8ec6-48ae-b8bf-cc402a8e8c34" collectionName="ProjectTasksByProjectTaskOwnerStaff" keyColumnName="ProjectTask_ownerStaffId" backreferenceName="ProjectTaskOwnerStaff" eagerLoadCollection="true">
+          <entityMoniker name="//ProjectTask" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="f53dca40-d9d6-40d1-8d4e-13c845cf80ed" collectionName="ProjectTasksByProjectTaskAssignedStaff" keyColumnName="ProjectTask_assignedStaffId" backreferenceName="ProjectTaskAssignedStaff">
+          <entityMoniker name="//ProjectTask" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="GroupingType" tableName="GroupingType">
+      <entityProperties>
+        <entityProperty name="GroupingTypeDescription" size="32" columnName="GroupingType_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="GroupingTypeId" columnName="GroupingType_id" dataType="Int16" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="15262f18-253a-454e-9865-a57d9528772d" collectionName="Groupings" keyColumnName="Grouping_groupingTypeId" backreferenceName="GroupingGroupingType">
+          <entityMoniker name="//Grouping" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="Project" tableName="Project" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="ProjectName" size="32" columnName="Project_name" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectOwnerId" columnName="Project_ownerId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectCreateDate" columnName="Project_createDate" dataType="DateTime">
+          <validations>
+            <notNullValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectGroupingId" columnName="Project_groupingId" isNullable="true" dataType="Int16" />
+        <entityProperty name="ProjectProjectTypeId" columnName="Project_projectTypeId" isNullable="true" dataType="Int16" />
+        <entityProperty name="ProjectProjectManagerId" columnName="Project_projectManager" isNullable="true" dataType="Int32" />
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectId" columnName="Project_id" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="7a731ec5-3864-42c2-9f63-5d05c0283def" collectionName="ProjectTasks" keyColumnName="ProjectTask_projectId" backreferenceName="ProjectTaskProject" eagerLoadCollection="true">
+          <entityMoniker name="//ProjectTask" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="68ad8890-02b2-45f6-bba1-f14b6e1deebe" collectionName="ProjectTaskNotifications" keyColumnName="ProjectTaskNotification_projectId" backreferenceName="ProjectTaskNotificationProject">
+          <entityMoniker name="//ProjectTaskNotification" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="0a5aed74-1418-418c-88e1-c66416628ca1" collectionName="ProjectIssuesByProjectIssueProject" keyColumnName="ProjectIssue_projectId" backreferenceName="ProjectIssueProject" eagerLoadCollection="true">
+          <entityMoniker name="//ProjectIssue" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="5984a256-80ee-495e-a8b8-5b8918233f94" collectionName="ProjectDocumentsByProjectDocumentProject" keyColumnName="ProjectDocument_projectId" backreferenceName="ProjectDocumentProject" eagerLoadCollection="true">
+          <entityMoniker name="//ProjectDocument" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="ProjectIssueSeverity" tableName="ProjectIssueSeverity">
+      <entityProperties>
+        <entityProperty name="ProjectIssueSeverityDescription" size="32" columnName="ProjectIssueSeverity_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectIssueSeverityOrder" columnName="ProjectIssueSeverity_order" isNullable="true" dataType="Int16" />
+        <entityProperty name="ProjectIssueSeverityRiskFlag" columnName="ProjectIssueSeverity_riskFlag" isNullable="true" dataType="Boolean" />
+        <entityProperty name="ProjectIssueSeverityIssueFlag" columnName="ProjectIssueSeverity_issueFlag" isNullable="true" dataType="Boolean" />
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectIssueSeverityId" columnName="ProjectIssueSeverity_id" dataType="Int16" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="0bf1a466-a1f9-46c6-adbe-4f65f3209057" collectionName="ProjectIssuesByProjectIssueSeverity" keyColumnName="ProjectIssue_severityId" backreferenceName="ProjectIssueSeverity">
+          <entityMoniker name="//ProjectIssue" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="ProjectNotificationInstance" tableName="ProjectNotificationInstance">
+      <entityProperties>
+        <entityProperty name="ProjectNotificationInstanceNotificationId" columnName="ProjectNotificationInstance_notificationId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectNotificationInstanceCreateDate" columnName="ProjectNotificationInstance_createDate" isNullable="true" dataType="DateTime" />
+        <entityProperty name="ProjectNotificationInstanceViewDate" columnName="ProjectNotificationInstance_viewDate" isNullable="true" dataType="DateTime" />
+        <entityProperty name="ProjectNotificationInstanceDescription" size="256" columnName="ProjectNotificationInstance_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="256" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectNotificationInstanceId" columnName="ProjectNotificationInstance_id" />
+      </identityProperties>
+    </entity>
+    <entity name="ProjectTask" tableName="ProjectTask" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="ProjectTaskDescription" size="32" columnName="ProjectTask_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectTaskProjectTaskTypeId" columnName="ProjectTask_projectTaskTypeId" dataType="Int32">
+          <validations>
+            <notNullValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectTaskProgress" columnName="ProjectTask_progress" isNullable="true" dataType="Int16" />
+        <entityProperty name="ProjectTaskCreateDate" columnName="ProjectTask_createDate" dataType="DateTime">
+          <validations>
+            <notNullValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectTaskDueDate" columnName="ProjectTask_dueDate" dataType="DateTime">
+          <validations>
+            <notNullValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectTaskEffort" columnName="ProjectTask_effort" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectTaskProjectId" columnName="ProjectTask_projectId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectTaskOwnerStaffId" columnName="ProjectTask_ownerStaffId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectTaskAssignedStaffId" columnName="ProjectTask_assignedStaffId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectTaskParentProjectTaskId" columnName="ProjectTask_parentProjectTaskId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectTaskTitle" size="32" columnName="ProjectTask_title" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectTaskLongDescription" size="500" columnName="ProjectTask_longDescription" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="500" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectTaskId" columnName="ProjectTask_id" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="d24ace22-0e73-4e34-9f2f-9879f522e8d5" collectionName="ProjectTasks" keyColumnName="ProjectTask_parentProjectTaskId" backreferenceName="ProjectTaskParentProjectTask">
+          <entityMoniker name="//ProjectTask" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="d8367c8b-423c-4cc2-90ab-216df8fbbd71" collectionName="ProjectTaskNotifications" keyColumnName="ProjectTaskNotification_projectTaskId" backreferenceName="ProjectTaskNotificationProjectTask">
+          <entityMoniker name="//ProjectTaskNotification" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="ae3fa050-3fdc-4ce1-ac86-a13a0ae8bd6a" collectionName="ProjectUpdates" keyColumnName="ProjectUpdate_projectTaskId" backreferenceName="ProjectUpdateProjectTask" eagerLoadCollection="true">
+          <entityMoniker name="//ProjectUpdate" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="1ef81d86-2ca6-4965-85cc-97a342c532a7" collectionName="ProjectNotes" keyColumnName="ProjectNote_projectTaskId" backreferenceName="ProjectNoteProjectTask">
+          <entityMoniker name="//ProjectNote" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="bcf202e7-015a-4036-aea1-cb9461bd4d4c" collectionName="ProjectIssuesByProjectIssueProjectTask" keyColumnName="ProjectIssue_projectTaskId" backreferenceName="ProjectIssueProjectTask" eagerLoadCollection="true">
+          <entityMoniker name="//ProjectIssue" />
+        </oneToManyAssociation>
+        <oneToManyAssociation Id="f785ac34-f723-49d0-931d-30660b221031" collectionName="ProjectDocumentsByProjectDocumentProjectTask" keyColumnName="ProjectDocument_projectTaskId" backreferenceName="ProjectDocumentProjectTask" eagerLoadCollection="true">
+          <entityMoniker name="//ProjectDocument" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="ProjectTaskNotification" tableName="ProjectTaskNotification">
+      <entityProperties>
+        <entityProperty name="ProjectTaskNotificationProjectTaskId" columnName="ProjectTaskNotification_projectTaskId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectTaskNotificationUpdate" columnName="ProjectTaskNotification_update" isNullable="true" dataType="Boolean" />
+        <entityProperty name="ProjectTaskNotificationCompletion" columnName="ProjectTaskNotification_completion" isNullable="true" dataType="Boolean" />
+        <entityProperty name="ProjectTaskNotificationOverdue" columnName="ProjectTaskNotification_overdue" isNullable="true" dataType="Boolean" />
+        <entityProperty name="ProjectTaskNotificationCreateDate" columnName="ProjectTaskNotification_createDate" isNullable="true" dataType="DateTime" />
+        <entityProperty name="ProjectTaskNotificationProjectId" columnName="ProjectTaskNotification_projectId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectTaskNotificationStaffId" columnName="ProjectTaskNotification_staffId" isNullable="true" dataType="Int32" />
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectTaskNotificationId" columnName="ProjectTaskNotification_id" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="95bfd22c-2ec8-461e-9ad5-3950e7669ba3" collectionName="ProjectNotificationInstances" keyColumnName="ProjectNotificationInstance_notificationId" backreferenceName="ProjectNotificationInstanceNotification">
+          <entityMoniker name="//ProjectNotificationInstance" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="ProjectTaskType" tableName="ProjectTaskType" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="ProjectTaskTypeDescription" size="64" columnName="ProjectTaskType_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="64" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectTaskTypeId" columnName="ProjectTaskType_id" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="869ffd7c-dbfd-4d0f-b17c-d0d3b0e2bae7" collectionName="ProjectTasks" keyColumnName="ProjectTask_projectTaskTypeId" backreferenceName="ProjectTaskProjectTaskType" isDependent="true">
+          <entityMoniker name="//ProjectTask" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="ProjectType" tableName="ProjectType" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="ProjectTypeDescription" size="32" columnName="ProjectType_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectTypeId" columnName="ProjectType_id" dataType="Int16" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="2c2b8827-ec25-4f17-87a3-dedd2076bfc3" collectionName="Projects" keyColumnName="Project_projectTypeId" backreferenceName="ProjectProjectType">
+          <entityMoniker name="//Project" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="ProjectUpdate" tableName="ProjectUpdate" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="ProjectUpdateCreateDate" columnName="ProjectUpdate_createDate" dataType="DateTime">
+          <validations>
+            <notNullValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectUpdatePostDate" columnName="ProjectUpdate_postDate" dataType="DateTime">
+          <validations>
+            <notNullValidation />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectUpdateUpdateTypeId" columnName="ProjectUpdate_updateTypeId" isNullable="true" dataType="Int16" />
+        <entityProperty name="ProjectUpdateProjectTaskId" columnName="ProjectUpdate_projectTaskId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectUpdateDescription" size="300" columnName="ProjectUpdate_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="300" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectUpdateId" columnName="ProjectUpdate_id" />
+      </identityProperties>
+    </entity>
+    <entity name="ProjectUpdateType" tableName="ProjectUpdateType" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="ProjectUpdateTypeDescription" size="32" columnName="ProjectUpdateType_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectUpdateTypeId" columnName="ProjectUpdateType_id" dataType="Int16" />
+      </identityProperties>
+      <oneToManyAssociations>
+        <oneToManyAssociation Id="67e746f6-701b-45c5-9329-fb5864c08a56" collectionName="ProjectUpdates" keyColumnName="ProjectUpdate_updateTypeId" backreferenceName="ProjectUpdateUpdateType">
+          <entityMoniker name="//ProjectUpdate" />
+        </oneToManyAssociation>
+      </oneToManyAssociations>
+    </entity>
+    <entity name="RequestForWork" tableName="RequestForWork">
+      <entityProperties>
+        <entityProperty name="RequestForWorkRequestorId" columnName="RequestForWork_requestorId" isNullable="true" dataType="Int32" />
+        <entityProperty name="RequestForWorkCreateDate" columnName="RequestForWork_createDate" isNullable="true" dataType="DateTime" />
+        <entityProperty name="RequestForWorkAuthorisedById" columnName="RequestForWork_authorisedById" isNullable="true" dataType="Int32" />
+        <entityProperty name="RequestForWorkAuthorisationDate" columnName="RequestForWork_authorisationDate" isNullable="true" dataType="DateTime" />
+        <entityProperty name="RequestForWorkCostCentre" size="8" columnName="RequestForWork_costCentre" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="8" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="RequestForWorkDescription" size="1024" columnName="RequestForWork_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="1024" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="RequestForWorkReason" size="1024" columnName="RequestForWork_reason" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="1024" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="RequestForWorkBusinessBenefits" size="1024" columnName="RequestForWork_businessBenefits" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="1024" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="RequestForWorkCostSavings" size="128" columnName="RequestForWork_costSavings" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="128" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="RequestForWorkDepartmentId" columnName="RequestForWork_department" isNullable="true" dataType="Int16" />
+        <entityProperty name="RequestForWorkTitle" size="64" columnName="RequestForWork_title" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="64" />
+          </validations>
+        </entityProperty>
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="RequestForWorkId" columnName="RequestForWork_id" />
+      </identityProperties>
+    </entity>
+    <entity name="ProjectNote" tableName="ProjectNote">
+      <entityProperties>
+        <entityProperty name="ProjectNoteDescription" size="250" columnName="ProjectNote_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="250" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectNoteProjectTaskId" columnName="ProjectNote_projectTaskId" isNullable="true" dataType="Int32" />
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectNoteId" columnName="ProjectNote_id" />
+      </identityProperties>
+    </entity>
+    <entity name="ProjectIssue" tableName="ProjectIssue" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="ProjectIssueRiskFlag" columnName="ProjectIssue_riskFlag" isNullable="true" dataType="Boolean" />
+        <entityProperty name="ProjectIssueIssueFlag" columnName="ProjectIssue_issueFlag" isNullable="true" dataType="Boolean" />
+        <entityProperty name="ProjectIssueDescription" size="512" columnName="ProjectIssue_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="512" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectIssueShortDescription" size="32" columnName="ProjectIssue_shortDescription" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectIssueCreateDate" columnName="ProjectIssue_createDate" isNullable="true" dataType="DateTime" />
+        <entityProperty name="ProjectIssueResolutionDate" columnName="ProjectIssue_resolutionDate" isNullable="true" dataType="DateTime" />
+        <entityProperty name="ProjectIssueMitigation" size="512" columnName="ProjectIssue_mitigation" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="512" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectIssueSeverityId" columnName="ProjectIssue_severityId" isNullable="true" dataType="Int16" />
+        <entityProperty name="ProjectIssueProjectTaskId" columnName="ProjectIssue_projectTaskId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectIssueProjectId" columnName="ProjectIssue_projectId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectIssueCompletionDate" columnName="ProjectIssue_completionDate" isNullable="true" dataType="DateTime" />
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectIssueId" columnName="ProjectIssue_id" />
+      </identityProperties>
+    </entity>
+    <entity name="ProjectDocument" tableName="ProjectDocument" loadOptions="LazyFetchDisabled">
+      <entityProperties>
+        <entityProperty name="ProjectDocumentTitle" size="32" columnName="ProjectDocument_title" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="32" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectDocumentTypeId" columnName="ProjectDocument_typeId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectDocumentBlob" columnName="ProjectDocument_blob" isNullable="true" dataType="Blob" />
+        <entityProperty name="ProjectDocumentDescription" size="250" columnName="ProjectDocument_description" isNullable="true">
+          <validations>
+            <lengthValidation minimumLength="0" maximumLength="250" />
+          </validations>
+        </entityProperty>
+        <entityProperty name="ProjectDocumentProjectId" columnName="ProjectDocument_projectId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectDocumentProjectTaskId" columnName="ProjectDocument_projectTaskId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectDocumentUserId" columnName="ProjectDocument_userId" isNullable="true" dataType="Int32" />
+        <entityProperty name="ProjectDocumentCreateDate" columnName="ProjectDocument_createDate" isNullable="true" dataType="DateTime" />
+      </entityProperties>
+      <identityProperties>
+        <identityProperty name="ProjectDocumentId" columnName="ProjectDocument_id" />
+      </identityProperties>
+    </entity>
+  </entities>
+</model>

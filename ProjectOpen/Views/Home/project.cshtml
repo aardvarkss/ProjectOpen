@@ -1,0 +1,376 @@
+﻿@model ProjectOpen.Models.ViewModel.ProjectDetail
+
+@{
+    ViewBag.Title = "Project Details";
+    ProjectTask p2 = null;
+}
+
+@Html.Partial("_HeaderBar", Model.Header.Hdr)   
+
+<div id="container">
+
+@Html.Partial("_FixedSideBarNavigation",Model.Header.sbm)
+    
+    <div id="content">
+			<div class="container">
+				
+                @Html.Partial("_BreadCrumbsLine", Model.Header.brdcrm)
+
+                @Html.Partial("_HeadingLine", Model.Header.hl)
+
+                <div class="row">
+					<!--=== Project details ===-->
+					<div class="col-md-12">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i>Project Details</h4>
+							</div>
+							<div class="widget-content">
+								<form class="form-horizontal row-border" action="/Home/UpdateProjectSubmit"  method="post">
+
+									<div class="form-group">
+                                        <label class="col-md-2 control-label">Id:</label>
+										<div class="col-md-5">
+											<div class="row" style="margin-bottom: 6px;">
+												<div class="col-md-3">
+													<input type="text" name="projId" readonly="true" class="form-control"
+                                                        value="@Model.Proj.ProjectId"
+                                                        >
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-1 control-label">Type:</label>
+										<div class="col-md-3">
+											<select class="form-control" name="projType">
+												        @foreach(ProjectType s in Model.ProjectTypes){
+                                                            <option value="@s.ProjectTypeId" 
+                                                                @if(s.ProjectTypeId == Model.Proj.ProjectProjectTypeId){
+                                                                        @:selected="selected"
+                                                                    }
+                                                                >@s.ProjectTypeDescription</option>
+                                                        }
+											</select>
+                                        </div>
+                                    </div>
+                                        <div class="form-group">
+										<label class="col-md-2 control-label">Project Name:</label>
+										<div class="col-md-5">
+											<div class="row" style="margin-bottom: 6px;">
+												<div class="col-md-9">
+													<input type="text" name="projName" class="form-control"
+                                                        value="@Model.Proj.ProjectName"
+                                                        >
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-1 control-label">Department:</label>
+										<div class="col-md-3">
+											<select class="form-control" name="projDepartment">
+												        @foreach(Grouping g in Model.Departments){
+                                                            <option value="@g.GroupingId" 
+                                                                @if(g.GroupingId == Model.selectedDepartment){
+                                                                        @:selected="selected"
+                                                                    }
+                                                                >@g.GroupingDescription</option>
+                                                        }
+											        </select>
+                                        </div>
+                                          
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Owner:</label>
+										<div class="col-md-5">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-9">
+													<input type="text" name="projOwner" class="form-control"
+                                                        value="@Model.Proj.ProjectOwner.StaffDisplayName"
+                                                        >
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-1 control-label">Created:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="createDate" class="form-control datepicker"
+                                                        value="
+                                                        @{
+                                                            string result = "";
+                                                            
+                                                            if (Model.Proj.ProjectCreateDate == null)
+                                                            {
+                                                                result = DateTime.Now.ToString("dd-MM-yyyy");
+                                                            }
+                                                            else
+                                                            {
+                                                                result = Model.Proj.ProjectCreateDate.ToString("dd-MM-yyyy");
+                                                            }
+                                                            
+                                                            @result
+                                                        }
+                                                        ">
+												</div>
+											</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Next Deliverable:</label>
+										<div class="col-md-5">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-12">
+													<input type="text" name="regular" class="form-control"
+                                                        value="
+                                                           @{
+                                                               var p = (Model.Proj.ProjectTasks).Where(x => x.ProjectTaskProgress == 100);
+                                                               
+                                                               
+                                                               if(p.Count() == 0)
+                                                               {
+                                                                   p2 = (Model.Proj.ProjectTasks).OrderByDescending(x => x.ProjectTaskDueDate).First();
+                                                               }
+                                                               else 
+                                                               { 
+                                                                   p2 = p.OrderByDescending(x => x.ProjectTaskDueDate).First();
+                                                               }
+                                                               
+                                                               @p2.ProjectTaskDescription;
+                                                           }
+                                                           ">
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-1 control-label">Starts:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+                                                    <input type="text" name="regular" class="form-control datepicker" value="@p2.ProjectTaskCreateDate.ToString("dd-MM-yyyy")">
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">With:</label>
+										<div class="col-md-5">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-12">
+                                                    <input type="text" name="regular" class="form-control" value="@p2.ProjectTaskAssignedStaff.StaffDisplayName">
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-1 control-label">Due:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+                                                    <input type="text" name="regular" class="form-control datepicker" value="@p2.ProjectTaskDueDate.ToString("dd-MM-yyyy")">
+												</div>
+											</div>
+                                        </div>
+
+                                        <div class="col-md-10">&nbsp;</div>
+                                        <div class="col-md-1">
+										    <button class="btn btn-info" type="submit">Save Task</button>
+                                        </div>
+
+									</div>
+                                    
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+					<!--=== Project details ===-->
+					<div class="col-md-12">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i>Tasks</h4>
+							</div>
+							<div class="widget-content">
+                                <table class="table table-hover table-bordered">
+									<thead>
+										<tr>
+											<th>ID</th>
+                                            <th>Created</th>
+											<th>Description</th>
+											<th>User</th>
+                                            <th class="hidden-xs">Due</th>
+                                            <th class="hidden-xs">Progress</th>
+											<th>Updates</th>
+                                            <th>Last Update</th>
+                                            <th>View</th>
+                                            <th>Documents</th>
+										</tr>
+									</thead>
+									<tbody>
+										@foreach(ProjectTask p in Model.Proj.ProjectTasks)
+                                        {
+                                            <tr>
+											    <td>@p.ProjectTaskId</td>
+                                                <td>@p.ProjectTaskCreateDate.ToString("dd-MM-yyyy hh:mm")</td>
+											    <td>@p.ProjectTaskDescription</td>
+											    <td class="hidden-xs">@p.ProjectTaskOwnerStaff.StaffDisplayName</td>
+                                                <td class="hidden-xs">@p.ProjectTaskDueDate.ToString("dd-MM-yyyy")</td>
+											    <td>
+                                                    <div class="progress progress-striped active">
+													    <div style="width: @p.ProjectTaskProgress%;" class="progress-bar progress-bar-success">@p.ProjectTaskProgress%</div>
+												    </div>
+                                                </td>
+                                                <td>@p.ProjectUpdates.Count</td>
+                                                @if (p.ProjectUpdates.Count == 0)
+                                                {
+                                                    <td>N/A</td>
+                                                }
+                                                else
+                                                {
+                                                <td>@(p.ProjectUpdates.Max(x => x.ProjectUpdateCreateDate).ToString("dd-MM-yyyy"))</td>
+                                                }
+
+                                                <td class="align-center"><a href="/home/viewTask/@p.ProjectTaskId"><span class="icol-clipboard-text">&nbsp;</span></a></td>
+                                                <td class="align-center"><a href="/home/newDocument"><span class="icol-clipboard-text">&nbsp;</span></a></td>
+										    </tr>
+                                        }
+									</tbody>
+								</table>
+                                    
+                                <div class="col-md-12" style="padding-bottom:28px;">
+                                    <div class="col-md-6"></div>
+                                    <div class="col-md-6 align-right">
+										<a href="/Home/newTask" class="btn btn-info" type="submit"> + Add Task</a>
+                                    </div>
+								</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+					<!--=== Issues / Risks ===-->
+					<div class="col-md-12">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i>Issues / Risks</h4>
+							</div>
+							<div class="widget-content">
+                                
+                                                        @if (Model.Proj.ProjectIssuesByProjectIssueProject.Count == 0)
+                                                        {
+                                                            @:<p>There are currently no issues or risks documented.</p>
+                                                        }
+                                                        else
+                                                        {
+                                                            <table class="table table-hover table-bordered">
+									                            <thead>
+										                            <tr>
+											                            <th>#</th>
+											                            <th>Created</th>
+											                            <th class="hidden-xs">Completion</th>
+                                                                        <th class="hidden-xs">Description</th>
+											                            <th>Issue / Risk</th>
+                                                                        <th>Mitigation</th>
+                                                                        <th>Progress</th>
+                                                                        <th>With User</th>
+                                                                        <th class="align-center">Details</th>
+										                            </tr>
+									                            </thead>
+									                            <tbody>
+
+                                                                @foreach(ProjectIssue p in Model.Proj.ProjectIssuesByProjectIssueProject)
+                                                                {
+										                            <tr>
+											                            <td>@p.ProjectIssueId</td>
+											                            <td>@p.ProjectIssueCreateDate</td>
+											                            <td class="hidden-xs">@p.ProjectIssueCompletionDate</td>
+                                                                        <td class="hidden-xs">@p.ProjectIssueDescription</td>
+											                            <td>@p.ProjectIssueIssueFlag</td>
+                                                                        <td>@p.ProjectIssueMitigation</td>
+                                                                        <td>
+                                                                            <div class="progress progress-striped active">
+													                            <div style="width: 70%;" class="progress-bar progress-bar-success">70%</div>
+												                            </div>
+                                                                        </td>
+                                                                        <td>S. Wright</td>
+                                                                        <td class="align-center"><span class="icol-clipboard-text">&nbsp;</span></td>
+										                            </tr>
+                                                                }
+                                                            </tbody>
+								                        </table>
+                                                        }
+									                
+
+                                <div class="col-md-12" style="padding-bottom:28px;">
+                                    <div class="col-md-6">&nbsp;</div>
+                                    <div class="col-md-6 align-right">
+									    <a href="/Home/newIssue" class="btn btn-info" type="submit"> + Add Issue / Risk</a>
+                                    </div>
+							    </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+					<!--=== Associated Documents ===-->
+					<div class="col-md-12">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i>Associated Documents</h4>
+							</div>
+							<div class="widget-content">
+                                
+                                                        @if (Model.Proj.ProjectDocumentsByProjectDocumentProject.Count == 0)
+                                                        {
+                                                            <p>There are currently no documents.</p>
+                                                        }
+                                                        else
+                                                        {
+                                                            <table class="table table-hover table-bordered">
+									                            <thead>
+										                            <tr>
+											                            <th>#</th>
+											                            <th>Task ID</th>
+											                            <th class="hidden-xs">Document Type</th>
+                                                                        <th class="hidden-xs">Title</th>
+											                            <th>User</th>
+                                                                        <th class="align-center">View</th>
+										                            </tr>
+									                            </thead>
+									                            <tbody>
+
+										                        @foreach(ProjectDocument p in Model.Proj.ProjectDocumentsByProjectDocumentProject)
+                                                                {
+                                                                    <tr>
+											                            <td>@p.ProjectDocumentId</td>
+                                                                        <td>@p.ProjectDocumentProjectTaskId</td>
+											                            <td><span class="label label-warning">@p.ProjectDocumentTypeId</span></td>
+                                                                        <td class="hidden-xs">@p.ProjectDocumentTitle</td>
+                                                                        <td class="hidden-xs">@p.ProjectDocumentUser.StaffDisplayName</td>
+                                                                        <td class="align-center"><span class="icol-clipboard-text">&nbsp;</span></td>
+										                            </tr>
+                                                                }
+                                                            </tbody>
+								                        </table>
+                                                    }
+									                
+                                <div class="col-md-12" style="padding-bottom:28px;">
+                                    <div class="col-md-6">&nbsp;</div>
+                                    <div class="col-md-6 align-right">
+									    <a href="/Home/newDocument" class="btn btn-info" type="submit"> + Add Document</a>
+                                    </div>
+							    </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+ </div>

@@ -1,0 +1,25 @@
+﻿@model ProjectOpen.Models.ViewModel._projectTypeTable
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="widget">
+			<div class="widget-header">
+				<h4><i class="icon-reorder"></i> @Model.projectTypeDescription (@Model.QtyOfProjects Projects)</h4>
+				<div class="toolbar">
+					<div class="btn-group">
+						<span class="btn btn-xs widget-collapse"><i class="icon-angle-down"></i></span>
+					</div>
+				</div>
+			</div>
+            <div class="widget-content">
+	            <div class="panel-group" id="accordion_@Model.projectTypeCount">
+                    @foreach (ProjectOpen.Models.ViewModel.ProjectDepartmentTable p in Model.DepartmentGroups)
+                    {
+                        Html.RenderPartial("_departmentTable",p);
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+							        

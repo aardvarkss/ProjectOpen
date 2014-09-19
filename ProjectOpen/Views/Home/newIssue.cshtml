@@ -1,0 +1,151 @@
+﻿@model SDD.Models.ViewModel.HeaderVM
+
+@{
+    ViewBag.Title = "Create Issue / Risk";
+}
+
+@Html.Partial("_HeaderBar",Model.Hdr)   
+
+<div id="container">
+
+    @Html.Partial("_FixedSideBarNavigation",Model.sbm)
+    
+    <div id="content">
+		<div class="container">
+				
+            @Html.Partial("_BreadCrumbsLine",Model.brdcrm)
+
+            @Html.Partial("_HeadingLine",Model.hl)
+        
+            <!-- Change request form -->
+            <div class="row">
+					<!--=== Project details ===-->
+					<div class="col-md-12">
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i>Create Issue / Risk</h4>
+							</div>
+							<div class="widget-content">
+								<form class="form-horizontal row-border" action="ChangeRequestSubmit" method="post">
+
+									<div class="form-group">
+                                        
+                                        <label class="col-md-2 control-label">ID:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="costCentre" class="form-control">
+												</div>
+											</div>
+                                        </div>
+
+										<label class="col-md-2 control-label">Risk / Issue:</label>
+										<div class="col-md-4">
+											<div class="row" style="margin-bottom: 6px;">
+												<div class="col-md-11">
+                                                    <select class="form-control" name="reqBy">
+												        <option value="1" selected="selected">Issue</option>
+												        <option value="2">Risk</option>
+											        </select>
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Create Date:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+                                                    <input type="text" name="reqDate" class="form-control datepicker" value="@DateTime.Now.ToString("dd-MM-yyyy")">
+												</div>
+											</div>
+                                        </div>
+                                        
+                                        <label class="col-md-2 control-label">Project:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="costCentre" class="form-control">
+												</div>
+											</div>
+                                        </div>
+                                        
+                                        <label class="col-md-2 control-label">Task:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="costCentre" class="form-control">
+												</div>
+											</div>
+                                        </div>
+                                          
+                                        <label class="col-md-2 control-label">Severity:</label>
+										<div class="col-md-4">
+											<div class="row" style="margin-bottom: 6px;">
+												<div class="col-md-11">
+													<select class="form-control" name="department">
+												        <option value="1" selected="selected">Low</option>
+												        <option value="2">Medium</option>
+												        <option value="3">High</option>
+                                                        <option value="4">Critical</option>
+											        </select>
+												</div>
+											</div>
+                                        </div>
+                                        <label class="col-md-2 control-label">Authorisation Date:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="authDate" class="form-control datepicker"  value="@DateTime.Now.ToString("dd-MM-yyyy")">
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Resolution Date:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="authDate" class="form-control datepicker"  value="@DateTime.Now.ToString("dd-MM-yyyy")">
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Completion Date:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="authDate" class="form-control datepicker"  value="@DateTime.Now.ToString("dd-MM-yyyy")">
+												</div>
+											</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+										<label class="col-md-2 control-label">Long Description:</label>
+										<div class="col-md-10">
+											<textarea rows="4" cols="5" name="changeDesc" class="limited form-control" data-limit="100"></textarea>
+											<span class="help-block" id="limit-text1"></span>
+										</div>
+									</div>
+                                    <div class="form-group">
+										<label class="col-md-2 control-label">Mitigation / Resolution:</label>
+										<div class="col-md-10">
+											<textarea rows="4" cols="5" name="changeDesc" class="limited form-control" data-limit="100"></textarea>
+											<span class="help-block" id="limit-text2"></span>
+										</div>
+									</div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10">&nbsp;</div>
+                                        <div class="col-md-1">
+										    <button class="btn btn-info" type="submit">Save</button>
+                                        </div>
+									</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+ </div>

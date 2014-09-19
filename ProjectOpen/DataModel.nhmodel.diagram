@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nHibernateModelDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 34.625, 13.875" name="DataModel">
+  <modelMoniker name="/" />
+  <nestedChildShapes>
+    <entityShape Id="a1687866-e3c1-448c-b698-32042a23b8aa" absoluteBounds="5.875, 1.375, 1.5, 1.49568359375">
+      <entityMoniker name="//Grouping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c214649-faca-4938-8525-3062355485f4" absoluteBounds="5.8900000000000006, 1.685, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8fafd1c2-fa82-476b-8340-a58920e3cf95" absoluteBounds="5.8900000000000006, 2.1366910807291664, 1.4700000000000002, 0.63399251302083326" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" absoluteBounds="8.125, 2.125, 1.5, 2.841793619791666">
+      <entityMoniker name="//Staff" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ee165a8-11d0-4bce-b309-d8256bc8cafb" absoluteBounds="8.14, 2.4349999999999996, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="57762e73-182d-42ea-a9b6-b91391e42e8d" absoluteBounds="8.14, 2.8866910807291664, 1.4700000000000002, 1.9801025390625" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="55756e62-d085-4286-b942-b53b18055232" absoluteBounds="10.375, 2.875, 1.5, 1.303382161458333">
+      <entityMoniker name="//GroupingType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="845bf171-8c92-446a-be49-72f99536048a" absoluteBounds="10.39, 3.185, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="37a3b02c-cd5e-4133-a6ef-7de7f6e40673" absoluteBounds="10.39, 3.6366910807291664, 1.4700000000000002, 0.44169108072916674" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="d59a0627-9025-4f57-b9cb-57197ace250e" absoluteBounds="12.625, 3.625, 1.5, 2.264889322916666">
+      <entityMoniker name="//Project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45bbcc17-f86a-4a8b-899f-03125872ce3f" absoluteBounds="12.64, 3.935, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c9d84bf9-faba-4c3e-b27e-0d4b0f86a153" absoluteBounds="12.64, 4.3866910807291664, 1.4700000000000002, 1.4031982421874998" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="fd53e7e5-79f9-4c8b-9a8d-39f60188913b" absoluteBounds="14.875, 4.375, 1.5, 1.8802864583333321">
+      <entityMoniker name="//ProjectIssueSeverity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8b3ec4f-29c1-4440-8b9c-d718bd5b4b23" absoluteBounds="14.89, 4.685, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="17360bdc-2466-4840-9d8a-913f4cadfc33" absoluteBounds="14.89, 5.1366910807291664, 1.4700000000000002, 1.0185953776041665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="0f1eea1a-5382-47c6-bda6-0ffbb1599178" absoluteBounds="17.125, 5.125, 1.5, 1.880286458333333">
+      <entityMoniker name="//ProjectNotificationInstance" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e064d734-b99f-4aa2-a1da-c34e649157f7" absoluteBounds="17.14, 5.4350000000000005, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b1c9ec81-39ee-4b26-8f74-802bbb2d89d3" absoluteBounds="17.14, 5.8866910807291664, 1.4700000000000002, 1.0185953776041665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="b30208aa-96bd-4553-ae18-a82f505859fc" absoluteBounds="9.875, 6.75, 1.5, 3.418697916666666">
+      <entityMoniker name="//ProjectTask" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b13624f3-a705-489a-9573-c8f642002d49" absoluteBounds="9.89, 7.0600000000000005, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="52702fac-4abb-4273-9225-18a4a968e718" absoluteBounds="9.89, 7.5116910807291664, 1.4700000000000002, 2.5570068359375" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="26ec375d-fb15-4ea2-abc8-2f3a20dc0cf5" absoluteBounds="21.625, 6.625, 1.5, 2.4571907552083334">
+      <entityMoniker name="//ProjectTaskNotification" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0325d594-7d43-44b0-bf58-9e2b65e9d19b" absoluteBounds="21.64, 6.9350000000000005, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6dd4e43a-afd5-49b3-a995-f1b53a3da92d" absoluteBounds="21.64, 7.3866910807291664, 1.4700000000000002, 1.5954996744791667" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="60b798c0-0dda-4d71-bc73-29fe891acba4" absoluteBounds="23.875, 7.375, 1.5, 1.3033821614583334">
+      <entityMoniker name="//ProjectTaskType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9842b572-202a-4589-bf22-fc3621ca63ed" absoluteBounds="23.89, 7.6850000000000005, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="977b82a6-9035-472e-ac8f-6a3ff6ec6310" absoluteBounds="23.89, 8.1366910807291664, 1.4700000000000002, 0.44169108072916674" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="7649fa1f-d944-402d-bcda-e3a7d684e350" absoluteBounds="26.125, 8.125, 1.5, 1.3033821614583334">
+      <entityMoniker name="//ProjectType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="96d756af-978b-44ec-82e1-0fb892a76b78" absoluteBounds="26.14, 8.435, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ea4aade0-a2b6-49b6-bcfa-342ee9291b15" absoluteBounds="26.14, 8.8866910807291664, 1.4700000000000002, 0.44169108072916674" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="cb0aad35-26fb-4b3c-8e40-af3a4850d3d1" absoluteBounds="28.375, 8.875, 1.5, 2.072587890625">
+      <entityMoniker name="//ProjectUpdate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51d71dea-5b19-4fff-addb-3db59848728f" absoluteBounds="28.39, 9.185, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="77fefa6e-e1c6-49eb-9158-0b233fbf787a" absoluteBounds="28.39, 9.6366910807291664, 1.4700000000000002, 1.2108968098958333" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="ff7c815c-4fbc-4d29-be8a-980987b9421c" absoluteBounds="30.625, 9.625, 1.5, 1.303382161458333">
+      <entityMoniker name="//ProjectUpdateType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fea6d3d2-7400-41d8-a9cd-3b8e852aef41" absoluteBounds="30.64, 9.935, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="51613542-cd0e-4644-8d3b-491db7df3562" absoluteBounds="30.64, 10.386691080729166, 1.4700000000000002, 0.44169108072916674" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <entityShape Id="0a58ee3b-432d-4d4f-bda6-dfe9a325160a" absoluteBounds="32.875, 10.375, 1.5, 3.226396484375">
+      <entityMoniker name="//RequestForWork" />
+      <nestedChildShapes>
+        <elementListCompartment Id="235c83cf-5d30-4c06-8451-c96b1e9dfe36" absoluteBounds="32.89, 10.685, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6162f385-2f36-4de9-ad23-fac22eac2a0b" absoluteBounds="32.89, 11.136691080729166, 1.4700000000000002, 2.364705403645833" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <oneToManyAssociationConnector Id="902ba170-2ffa-4e4d-8dc0-5beb4ba08d71" edgePoints="[(7.375 : 1.625); (9.86978916666667 : 1.625 : JumpStart); (10.3177108333333 : 1.625 : JumpEnd); (13.375 : 1.625); (13.375 : 3.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="49172e45-1703-4959-9d62-b99490026ff1" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="a1687866-e3c1-448c-b698-32042a23b8aa" />
+        <entityShapeMoniker Id="d59a0627-9025-4f57-b9cb-57197ace250e" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="6a949da1-7249-42fb-ae6e-d36ae2c5a064" edgePoints="[(6.625 : 2.87068359375); (6.625 : 12.3637414697266); (8.33463260416667 : 12.3637414697266 : JumpStart); (8.50129927083333 : 12.3637414697266 : JumpEnd); (32.875 : 12.3637414697266)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="3b3ba77a-51a4-4e03-81ec-929b269b9415" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="a1687866-e3c1-448c-b698-32042a23b8aa" />
+        <entityShapeMoniker Id="0a58ee3b-432d-4d4f-bda6-dfe9a325160a" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="d3ac26db-655f-4145-81db-669461a31661" edgePoints="[(7.375 : 2.497841796875); (8.125 : 2.497841796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="60a7e2d9-f969-4f33-bfac-7a4f90b44c69" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="a1687866-e3c1-448c-b698-32042a23b8aa" />
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="da8f18d1-2fdc-4f45-b697-f8ce19531082" edgePoints="[(9.625 : 4.72026753743489); (9.86978916666667 : 4.72026753743489 : JumpStart); (10.3177108333333 : 4.72026753743489 : JumpEnd); (12.625 : 4.72026753743489)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="9611c7fe-3767-4c4e-8177-6c8ed9a19e37" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+        <entityShapeMoniker Id="d59a0627-9025-4f57-b9cb-57197ace250e" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="b55b6aa4-fca5-4297-aa35-8d4482877c4d" edgePoints="[(9.625 : 4.41807484944661); (9.86978916666667 : 4.41807484944661 : JumpStart); (10.3177108333333 : 4.41807484944661 : JumpEnd); (12.625 : 4.41807484944661)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="93b19fea-5ab5-4376-8310-3780b005cd64" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+        <entityShapeMoniker Id="d59a0627-9025-4f57-b9cb-57197ace250e" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="6ef94ae1-b05f-45f3-9376-591d6795aefd" edgePoints="[(9.625 : 2.46875); (9.86978916666667 : 2.46875 : JumpStart); (10.3177108333333 : 2.46875 : JumpEnd); (11.0416666666667 : 2.46875 : JumpStart); (11.2083333333333 : 2.46875 : JumpEnd); (13.2916666666667 : 2.46875 : JumpStart); (13.4583333333333 : 2.46875 : JumpEnd); (22.375 : 2.46875); (22.375 : 6.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="6abe1431-43f0-4e73-af66-8b5b89dcbc5a" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+        <entityShapeMoniker Id="26ec375d-fb15-4ea2-abc8-2f3a20dc0cf5" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="4dbc43eb-7393-450f-9a4e-bf9f1247f328" edgePoints="[(9.07812625 : 4.96679361979167); (9.07812625 : 11.6556621801758); (32.875 : 11.6556621801758)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="e0242b90-b839-4415-bd0f-48307ebdfaa2" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+        <entityShapeMoniker Id="0a58ee3b-432d-4d4f-bda6-dfe9a325160a" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="482c6b06-f8eb-48e5-bd2a-1caedd4ebb48" edgePoints="[(8.4179659375 : 4.96679361979167); (8.4179659375 : 13.0138214770508); (32.875 : 13.0138214770508)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="d03e36bc-3251-4808-882b-e646bd0462ce" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+        <entityShapeMoniker Id="0a58ee3b-432d-4d4f-bda6-dfe9a325160a" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="68aa61b9-c3f1-40c4-a5ce-d60e1b7663f3" edgePoints="[(11.125 : 2.875); (11.125 : 1.7812525); (10.3177108333333 : 1.7812525 : JumpStart); (9.86978916666667 : 1.7812525 : JumpEnd); (7.375 : 1.7812525)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="15262f18-253a-454e-9865-a57d9528772d" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="55756e62-d085-4286-b942-b53b18055232" />
+        <entityShapeMoniker Id="a1687866-e3c1-448c-b698-32042a23b8aa" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="f10b619e-5927-43f3-8cb9-1bc21de4c892" edgePoints="[(13.375 : 5.88988932291667); (13.375 : 8.48237708658854); (11.375 : 8.48237708658854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="7a731ec5-3864-42c2-9f63-5d05c0283def" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="d59a0627-9025-4f57-b9cb-57197ace250e" />
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="013f4c5c-e25c-44d9-a88d-82d541a17673" edgePoints="[(14.125 : 3.86718625); (21.9687475 : 3.86718625); (21.9687475 : 6.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="68ad8890-02b2-45f6-bba1-f14b6e1deebe" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="d59a0627-9025-4f57-b9cb-57197ace250e" />
+        <entityShapeMoniker Id="26ec375d-fb15-4ea2-abc8-2f3a20dc0cf5" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="3ecb32a1-aadc-4561-add5-29c24f3ec742" edgePoints="[(10.4069230769231 : 10.1686979166667); (10.4069230769231 : 10.4186979166667); (10.8534615384615 : 10.4186979166667); (10.8534615384615 : 10.1686979166667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="d24ace22-0e73-4e34-9f2f-9879f522e8d5" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="77c08b9b-a89f-4621-b438-8dbad0cd6092" edgePoints="[(11.375 : 7.71258177246094); (13.2916666666667 : 7.71258177246094 : JumpStart); (13.4583333333333 : 7.71258177246094 : JumpEnd); (21.625 : 7.71258177246094)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="d8367c8b-423c-4cc2-90ab-216df8fbbd71" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+        <entityShapeMoniker Id="26ec375d-fb15-4ea2-abc8-2f3a20dc0cf5" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="061cf40b-ffb1-4a95-9c40-b570578dd23b" edgePoints="[(11.375 : 9.86478123288223); (28.375 : 9.86478123288223)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="ae3fa050-3fdc-4ce1-ac86-a13a0ae8bd6a" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+        <entityShapeMoniker Id="cb0aad35-26fb-4b3c-8e40-af3a4850d3d1" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="c3dc0ae9-1e63-47f7-b3e1-aad3ccc1c9ef" edgePoints="[(21.625 : 6.81514322916667); (18.625 : 6.81514322916667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="95bfd22c-2ec8-461e-9ad5-3950e7669ba3" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="26ec375d-fb15-4ea2-abc8-2f3a20dc0cf5" />
+        <entityShapeMoniker Id="0f1eea1a-5382-47c6-bda6-0ffbb1599178" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="76fe477d-e9f6-48ea-808f-ca0aaaafbbb2" edgePoints="[(24.625 : 8.67838216145833); (24.625 : 9.47348349404528); (11.375 : 9.47348349404528)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="869ffd7c-dbfd-4d0f-b17c-d0d3b0e2bae7" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="60b798c0-0dda-4d71-bc73-29fe891acba4" />
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="12a0f78a-bb0a-4f1e-855b-e631200e7e51" edgePoints="[(26.875 : 8.125); (26.875 : 4.1718775); (14.125 : 4.1718775)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="2c2b8827-ec25-4f17-87a3-dedd2076bfc3" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="7649fa1f-d944-402d-bcda-e3a7d684e350" />
+        <entityShapeMoniker Id="d59a0627-9025-4f57-b9cb-57197ace250e" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="d5a6a46b-0209-421f-9311-6e09cec35bce" edgePoints="[(30.625 : 10.2766910807292); (29.875 : 10.2766910807292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="67e746f6-701b-45c5-9329-fb5864c08a56" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="ff7c815c-4fbc-4d29-be8a-980987b9421c" />
+        <entityShapeMoniker Id="cb0aad35-26fb-4b3c-8e40-af3a4850d3d1" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="321a6a05-9a80-4421-9815-f02378960a05" edgePoints="[(8.65692307692308 : 2.125); (8.65692307692308 : 1.875); (9.10346153846154 : 1.875); (9.10346153846154 : 2.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="936eb978-52c4-4338-93eb-6fd8ae98a72f" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <entityShape Id="e274fda5-c1b8-409f-97dc-c587c0746b29" absoluteBounds="4.125, 1.25, 1.5, 1.4956835937499995">
+      <entityMoniker name="//ProjectNote" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d807b848-c326-4ee5-bfb3-7e17324b879d" absoluteBounds="4.14, 1.56, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f5074b12-6a2e-4712-88d1-f333e6e1e6af" absoluteBounds="4.14, 2.0116910807291664, 1.4700000000000002, 0.63399251302083326" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <oneToManyAssociationConnector Id="a98a5336-738d-48d5-b039-5b64cf8bce18" edgePoints="[(10.09375 : 6.75); (10.09375 : 1.28125); (10.0364558333333 : 1.28125 : JumpStart); (9.86978916666667 : 1.28125 : JumpEnd); (5.625 : 1.28125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="1ef81d86-2ca6-4965-85cc-97a342c532a7" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+        <entityShapeMoniker Id="e274fda5-c1b8-409f-97dc-c587c0746b29" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <entityShape Id="c52db6e5-c1bf-47b7-9481-653534633cf3" absoluteBounds="3.25, 1.125, 1.5, 3.226396484374999">
+      <entityMoniker name="//ProjectIssue" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc3e3754-f171-4b37-8458-f30563226f25" absoluteBounds="3.265, 1.435, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9b0ca7a8-9a64-4fb6-8fbe-6e033d1c7610" absoluteBounds="3.265, 1.8866910807291664, 1.4700000000000002, 2.364705403645833" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <oneToManyAssociationConnector Id="72799d7a-9e71-4855-973c-41054f7e2359" edgePoints="[(12.625 : 5.45959147135417); (10.3177108333333 : 5.45959147135417 : JumpStart); (9.86978916666667 : 5.45959147135417 : JumpEnd); (9.46614895833333 : 5.45959147135417 : JumpStart); (9.29948229166667 : 5.45959147135417 : JumpEnd); (9.16145958333333 : 5.45959147135417 : JumpStart); (8.99479291666667 : 5.45959147135417 : JumpEnd); (8.85677020833333 : 5.45959147135417 : JumpStart); (8.69010354166667 : 5.45959147135417 : JumpEnd); (8.50129927083333 : 5.45959147135417 : JumpStart); (8.33463260416667 : 5.45959147135417 : JumpEnd); (6.70833333333333 : 5.45959147135417 : JumpStart); (6.54166666666667 : 5.45959147135417 : JumpEnd); (4.48958583333333 : 5.45959147135417 : JumpStart); (4.32291916666667 : 5.45959147135417 : JumpEnd); (4 : 5.45959147135417); (4 : 4.351396484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="0a5aed74-1418-418c-88e1-c66416628ca1" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="d59a0627-9025-4f57-b9cb-57197ace250e" />
+        <entityShapeMoniker Id="c52db6e5-c1bf-47b7-9481-653534633cf3" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="00d4496b-4576-4d95-a168-228d16d6bc92" edgePoints="[(14.875 : 6.103837890625); (13.4583333333333 : 6.103837890625 : JumpStart); (13.2916666666667 : 6.103837890625 : JumpEnd); (10.3177108333333 : 6.103837890625 : JumpStart); (9.86978916666667 : 6.103837890625 : JumpEnd); (9.46614895833333 : 6.103837890625 : JumpStart); (9.29948229166667 : 6.103837890625 : JumpEnd); (9.16145958333333 : 6.103837890625 : JumpStart); (8.99479291666667 : 6.103837890625 : JumpEnd); (8.85677020833333 : 6.103837890625 : JumpStart); (8.69010354166667 : 6.103837890625 : JumpEnd); (8.50129927083333 : 6.103837890625 : JumpStart); (8.33463260416667 : 6.103837890625 : JumpEnd); (6.70833333333333 : 6.103837890625 : JumpStart); (6.54166666666667 : 6.103837890625 : JumpEnd); (4.4062525 : 6.103837890625); (4.4062525 : 4.351396484375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="0bf1a466-a1f9-46c6-adbe-4f65f3209057" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="fd53e7e5-79f9-4c8b-9a8d-39f60188913b" />
+        <entityShapeMoniker Id="c52db6e5-c1bf-47b7-9481-653534633cf3" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="6463d6e4-0ba6-4617-a718-85e052792651" edgePoints="[(9.9531225 : 6.75); (9.9531225 : 1.15625); (4.75 : 1.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="bcf202e7-015a-4036-aea1-cb9461bd4d4c" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+        <entityShapeMoniker Id="c52db6e5-c1bf-47b7-9481-653534633cf3" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <entityShape Id="a682cc49-4788-4843-a5eb-cdfaaff02013" absoluteBounds="1, 0.5, 1.5, 2.6494921874999995">
+      <entityMoniker name="//ProjectDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ac24fd5-31f5-401c-9754-c56073b99bc9" absoluteBounds="1.0150000000000001, 0.81, 1.4700000000000002, 0.44169108072916657" name="Identity" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4000d7c5-605e-4614-99d2-69b0d5a973ff" absoluteBounds="1.0150000000000001, 1.2616910807291664, 1.4700000000000002, 1.7878011067708333" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </entityShape>
+    <oneToManyAssociationConnector Id="7520a645-b31d-4744-bb3e-f5fde6031c24" edgePoints="[(12.625 : 5.21319004557292); (10.3177108333333 : 5.21319004557292 : JumpStart); (9.86978916666667 : 5.21319004557292 : JumpEnd); (9.46614895833333 : 5.21319004557292 : JumpStart); (9.29948229166667 : 5.21319004557292 : JumpEnd); (9.16145958333333 : 5.21319004557292 : JumpStart); (8.99479291666667 : 5.21319004557292 : JumpEnd); (8.85677020833333 : 5.21319004557292 : JumpStart); (8.69010354166667 : 5.21319004557292 : JumpEnd); (8.50129927083333 : 5.21319004557292 : JumpStart); (8.33463260416667 : 5.21319004557292 : JumpEnd); (6.70833333333333 : 5.21319004557292 : JumpStart); (6.54166666666667 : 5.21319004557292 : JumpEnd); (4.48958583333333 : 5.21319004557292 : JumpStart); (4.32291916666667 : 5.21319004557292 : JumpEnd); (4.08333333333333 : 5.21319004557292 : JumpStart); (3.91666666666667 : 5.21319004557292 : JumpEnd); (1.75 : 5.21319004557292); (1.75 : 3.1494921875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="5984a256-80ee-495e-a8b8-5b8918233f94" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="d59a0627-9025-4f57-b9cb-57197ace250e" />
+        <entityShapeMoniker Id="a682cc49-4788-4843-a5eb-cdfaaff02013" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="2bb13101-194e-4ada-bf23-681dea33fbff" edgePoints="[(10.2343775 : 6.75); (10.2343775 : 0.78125); (2.5 : 0.78125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="f785ac34-f723-49d0-931d-30660b221031" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+        <entityShapeMoniker Id="a682cc49-4788-4843-a5eb-cdfaaff02013" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="e3331e3e-dba9-4285-b9d4-cd904def39e1" edgePoints="[(8.125 : 4.69034505208333); (6.70833333333333 : 4.69034505208333 : JumpStart); (6.54166666666667 : 4.69034505208333 : JumpEnd); (4.48958583333333 : 4.69034505208333 : JumpStart); (4.32291916666667 : 4.69034505208333 : JumpEnd); (4.08333333333333 : 4.69034505208333 : JumpStart); (3.91666666666667 : 4.69034505208333 : JumpEnd); (2.1562525 : 4.69034505208333); (2.1562525 : 3.1494921875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <oneToManyAssociationMoniker Id="dba5129e-311d-42b5-8b5c-eac8df89586f" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+        <entityShapeMoniker Id="a682cc49-4788-4843-a5eb-cdfaaff02013" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="3c3b3e98-1aa9-4bf0-913d-433c3f4b507f" edgePoints="[(9.382815625 : 4.96679361979167); (9.382815625 : 8.82298458984375); (9.875 : 8.82298458984375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="ecd8d6d8-8ec6-48ae-b8bf-cc402a8e8c34" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+      </nodes>
+    </oneToManyAssociationConnector>
+    <oneToManyAssociationConnector Id="b090a3a5-9f3f-435e-ae83-69a5b14fa115" edgePoints="[(8.773436875 : 4.96679361979167); (8.773436875 : 7.75523979492187); (8.99479291666667 : 7.75523979492187 : JumpStart); (9.16145958333333 : 7.75523979492187 : JumpEnd); (9.29948229166667 : 7.75523979492187 : JumpStart); (9.46614895833333 : 7.75523979492187 : JumpEnd); (9.875 : 7.75523979492187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <oneToManyAssociationMoniker Id="f53dca40-d9d6-40d1-8d4e-13c845cf80ed" />
+      <relativeChildShapes />
+      <nodes>
+        <entityShapeMoniker Id="1812d853-0e39-4f97-99ea-6b9b7361aa9b" />
+        <entityShapeMoniker Id="b30208aa-96bd-4553-ae18-a82f505859fc" />
+      </nodes>
+    </oneToManyAssociationConnector>
+  </nestedChildShapes>
+</nHibernateModelDiagram>

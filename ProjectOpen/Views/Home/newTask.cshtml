@@ -1,0 +1,262 @@
+﻿@model ProjectOpen.Models.ViewModel.TaskVM
+
+@{
+    ViewBag.Title = "Create Task";
+}
+
+@Html.Partial("_HeaderBar",Model.Header.Hdr)   
+
+<div id="container">
+
+    @Html.Partial("_FixedSideBarNavigation",Model.Header.sbm)
+    
+    <div id="content">
+		<div class="container">
+				
+            @Html.Partial("_BreadCrumbsLine",Model.Header.brdcrm)
+
+            @Html.Partial("_HeadingLine",@Model.Header.hl)
+        
+            <!-- Change request form -->
+            <div class="row">
+                    <form class="form-horizontal row-border" action="UpdateTaskSubmit" method="post">
+					
+					<div class="col-md-12">
+                        <!--=== Project details ===-->
+						<div class="widget box">
+							<div class="widget-header">
+								<h4><i class="icon-reorder"></i>Task Details</h4>
+							</div>
+							<div class="widget-content">
+								
+                                    <!-- header task summary -->
+                                    <div class="form-group">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-4">
+                                            <div class="circular-chart demo-reload col-md-12" 
+                                                data-percent="75" data-bar-color="#e25856">&nbsp;<span>75</span>%
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="circular-chart demo-reload col-md-12" 
+                                                data-percent="48" data-bar-color="#e25856">&nbsp;<span>48 Hrs</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="circular-chart demo-reload col-md-12" 
+                                                data-percent="21" data-bar-color="#e25856">&nbsp;<span>21 Hrs</span>
+
+                                            </div>
+                                        </div>
+                                       <div class="col-md-1"></div>
+                                        <div class="col-md-4">
+									        <a href="javascript:void(0);" class="title">Task Completion</a>
+                                        </div>
+                                        <div class="col-md-4">
+									        <a href="javascript:void(0);" class="title">Time Remaining</a>
+                                        </div>
+                                        <div class="col-md-3">
+									        <a href="javascript:void(0);" class="title">Since Last Update</a>
+                                        </div>
+									</div>
+                                    <!-- END - header task summary -->
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 control-label">ID:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" readonly="true" name="taskID"  class="form-control " value="@Model.Task.ProjectTaskId">
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Task Type:</label>
+										<div class="col-md-4" style="margin-bottom: 6px;">
+											<select class="form-control" name="projType">
+												        @foreach(ProjectTaskType s in Model.AvailableTypes){
+                                                            <option value="@s.ProjectTaskTypeId" 
+                                                                @if(s.ProjectTaskTypeId == Model.Task.ProjectTaskProjectTaskTypeId){
+                                                                        @:selected="selected"
+                                                                    }
+                                                                >@s.ProjectTaskTypeDescription</option>
+                                                        }
+											</select>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Title:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-12">
+                                                    <input type="text" name="title" class="form-control" value="@Model.Task.ProjectTaskTitle">
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Due Date:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+                                                    <input type="text" name="reqDate" class="form-control datepicker" value="@Model.Task.ProjectTaskCreateDate.ToString("dd-MM-yyyy")">
+												</div>
+											</div>
+                                        </div>
+                                        
+                                        <!-- description -->
+                                        
+										<label class="col-md-2 control-label">Description:</label>
+										<div class="col-md-10">
+											<textarea rows="4" cols="5" name="changeDesc" class="limited form-control" data-limit="100">@Model.Task.ProjectTaskLongDescription
+											</textarea>
+											<span class="help-block" id="limit-text1"></span>
+										</div>
+									    
+                                        <label class="col-md-2 control-label">Assigned To:</label>
+										<div class="col-md-4">
+                                                <select class="form-control" name="projType">
+												    @foreach(Staff s in Model.AvailableAssignedUsers){
+                                                        <option value="@s.StaffDisplayName" 
+                                                            @if(s.StaffId == Model.Task.ProjectTaskAssignedStaffId){
+                                                                    @:selected="selected"
+                                                                }
+                                                            >@s.StaffDisplayName</option>
+                                                    }
+											    </select>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Effort Req (Hours):</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="costCentre" class="form-control"
+                                                        value="@Model.Task.ProjectTaskEffort">
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Parent Task:</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="costCentre" class="form-control" value="@Model.Task.ProjectTaskParentProjectTaskId">
+												</div>
+											</div>
+                                        </div>
+
+                                        <label class="col-md-2 control-label">Progress (Hours):</label>
+										<div class="col-md-4">
+											<div class="row"  style="margin-bottom: 6px;">  
+												<div class="col-md-5">
+													<input type="text" name="costCentre" class="form-control"
+                                                        value="@Model.Task.ProjectTaskProgress">
+												</div>
+											</div>
+                                        </div>
+     
+                                        <div class="col-md-10">&nbsp;</div>
+                                        <div class="col-md-1">
+										    <button class="btn btn-info" type="submit">Save Task</button>
+                                        </div>
+                                    </div>
+                                      </div></div></div>
+
+                                    <div class="col-md-12">
+						                <div class="widget box">
+							                <div class="widget-header">
+								                <h4><i class="icon-reorder"></i>Updates</h4>
+							                </div>
+							                <div class="widget-content" >
+                                                <table class="table table-hover table-bordered">
+									                <thead>
+										                <tr>
+											                <th>#</th>
+											                <th>Description</th>
+											                <th class="col-md-2">User (Created)</th>
+                                                            <th class="align-center">View</th>
+										                </tr>
+									                </thead>
+									                <tbody>
+										                <tr>
+											                <td>001</td>
+											                <td>Blah, blah, blah</td>
+                                                            <td>M. Nicholson<br />(2014-04-01 08:46)</td>
+                                                            <td class="align-center"><span class="icol-clipboard-text">&nbsp;</span></td>
+										                </tr>
+										                <tr>
+											                <td>002</td>
+											                <td>More Blah, blah, blah, Blah, blah, blah, Blah, blah, blah, Blah, blah, blah, Blah, blah, blah, Blah, blah, blah, blah, blah, Blah, blah, blah, Blah, blah, blah, Blah, blah, blah, Blah, blah, blah, Blah, blah, blah</td>
+                                                            <td>M. Nicholson<br />(2014-04-02 09:58)</td>
+                                                            <td class="align-center"><span class="icol-clipboard-text">&nbsp;</span></td>
+										                </tr>
+                                                        </tbody>
+								                </table>
+                                                <div class="col-md-12" style="padding-bottom:28px;">
+											        <div class="col-md-10">&nbsp;</div>
+                                                    <div class="col-md-1">
+										                <button class="btn btn-info" type="submit">+ Add Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="col-md-12">
+						                <div class="widget box">
+							                <div class="widget-header">
+								                <h4><i class="icon-reorder"></i>Documents</h4>
+							                </div>
+							                <div class="widget-content">
+                                                <div>
+                                                     @if (Model.Task.ProjectDocumentsByProjectDocumentProjectTask.Count == 0)
+                                                        {
+                                                            @:<p>There are currently no documents associated to this task.</p>
+                                                        }
+                                                        else
+                                                        {
+                                                            <table class="table table-hover table-bordered">
+									                            <thead>
+										                            <tr>
+											                            <th>#</th>
+											                            <th>Title</th>
+											                            <th>User</th>
+                                                                        <th class="align-center">View</th>
+										                            </tr>
+									                            </thead>
+									                            <tbody>
+
+                                                                @foreach(ProjectDocument p in Model.Task.ProjectDocumentsByProjectDocumentProjectTask)
+                                                                {
+										                            <tr>
+											                            <td>@p.ProjectDocumentProjectId</td>
+											                            <td>@p.ProjectDocumentTitle</td>
+											                            <td class="hidden-xs">@p.ProjectDocumentUser.StaffDisplayName</td>
+                                                                        <td class="align-center"><span class="icol-clipboard-text">&nbsp;</span></td>
+										                            </tr>
+                                                                }
+                                                            </tbody>
+								                        </table>
+                                                        }
+                                                    
+                                                </div>
+                                                <div class="col-md-12" style="padding-bottom:28px;">
+                                                    <div class="col-md-10">&nbsp;</div>
+                                                    <div class="col-md-1">
+										                <button class="btn btn-info" type="submit">+ Add Document</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                            
+                </div>
+
+        </div>
+    </div>
+ </div>

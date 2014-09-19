@@ -1,0 +1,32 @@
+﻿@model ProjectOpen.Models.Breadcrumbs
+
+<!-- Breadcrumbs line -->
+				<div class="crumbs">
+					<ul id="breadcrumbs" class="breadcrumb">
+						<li>
+							<i class="icol-application-home"></i>
+							<a href="@Model.breadcrumbsLink[0]">@Model.breadcrumbs[0]</a>
+						</li>
+                        @for(int i = 1;i<Model.breadcrumbs.Count;i++)
+                        {
+						    <li 
+                                @if(i == Model.breadcrumbs.Count - 1)
+                                {
+                                    @:class="current"
+                                }
+                                >
+							    <a href="@Model.breadcrumbsLink[i]" title="">@Model.breadcrumbs[i]</a>
+						    </li>
+                        }
+					</ul>
+
+					<ul class="crumb-buttons">
+						<li><a href="charts.html" title=""><i class="icol-chart-curve"></i><span>  Statistics</span></a></li>
+						<li class="range"><a href="#">
+							<i class="icol-calendar-1"></i>
+							<span></span>
+							<i class="icon-angle-down"></i>
+						</a></li>
+					</ul>
+				</div>
+                <!-- /Breadcrumbs line -->

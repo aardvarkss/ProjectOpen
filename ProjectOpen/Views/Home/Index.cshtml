@@ -1,0 +1,31 @@
+﻿@model ProjectOpen.Models.ViewModel.ProjectSummary
+
+
+@{
+    ViewBag.Title = "Home";
+}
+
+@Html.Partial("_HeaderBar",Model.Header.Hdr)   
+
+<div id="container">
+
+@Html.Partial("_FixedSideBarNavigation",Model.Header.sbm)
+    
+    <div id="content">
+			<div class="container">
+				
+                @Html.Partial("_BreadCrumbsLine",Model.Header.brdcrm)
+
+                @Html.Partial("_HeadingLine",Model.Header.hl)
+                
+                @foreach(ProjectOpen.Models.ViewModel._projectTypeTable p in Model.Projects) 
+                {
+                    Html.RenderPartial("_projectTypeTable",p);
+                }
+
+                
+                                     
+             </div>
+        </div>
+    </div>
+           
